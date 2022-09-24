@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="center">
+        <form method="POST">
+            <label for="search">Search: </label><br>
+            <input type="text" id="search" name="search" value="" required><br>
+            <label for="options">Sort By:</label><br>
+            <select id="options" name="options">
+            <option value="low">Lowest price</option>
+            <option value="high">Highest price</option>
+            <option value="bestRated">Best Rated</option>
+            </select>
+            <input type="submit" value="Submit">    
+        </form> 
+    </div>  
+</body> 
+{% endblock %}
