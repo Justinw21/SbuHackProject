@@ -7,7 +7,7 @@ headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
     "accept-language": "en-US,en;q=0.5"
 }
-query = Template("https://www.amazon.com/s?k=$product")
+query = Template("https://www.amazon.com/s?k=$product&s=review-rank")
 print(query.substitute(product="calculator"))
 page = requests.get(query.substitute(product="calculator"), headers=headers).text
 """
