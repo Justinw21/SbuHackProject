@@ -10,7 +10,8 @@ def index():
 def main():
     search = request.form.get("search")
     options = request.form.get("options")
-    return options
+    number = request.form.get("number")
+    return search + " " + options + " " + number
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=81, debug=True)
