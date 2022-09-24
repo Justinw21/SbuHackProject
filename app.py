@@ -14,4 +14,5 @@ def main():
     return options
 
 if __name__ == "__main__":
+    print(os.getenv('PORT'))
     app.run(host='0.0.0.0', port=os.getenv('PORT', 81), debug=True)
