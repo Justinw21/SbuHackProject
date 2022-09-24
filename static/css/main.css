@@ -1,8 +1,44 @@
-.form{
-    vertical-align:baseline;
-    font-family: Helveltica, "Trebuchet MS", Verdana, sans-serif; 
+body
+{
+    background: linear-gradient(90deg, #f598a8, #f6edb2);
+    font-family: 'Inter Tight', sans-serif;
 }
-div {
+
+* {
+    font-size: 1.2em;
+}
+
+div
+{
     text-align:center;
 
-  }
+}
+
+#option
+{
+    font-weight:bold;
+}
+.inputs
+{
+    border: 1px solid;
+}
+
+.label
+{
+    color: purple;
+    font-weight:bold;
+}
+
+#options
+{
+    color: darkgray;
+}
+#button
+{
+    display:block;
+    background-color:transparent;
+    border:none;
+    position: relative;
+    left: 45%;
+    
+}
