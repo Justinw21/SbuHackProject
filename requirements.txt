@@ -4,4 +4,5 @@ beautifulsoup4
 flask
 gunicorn
 psycopg2-binary
+requests
 
