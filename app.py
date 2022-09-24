@@ -14,4 +14,8 @@ def main():
     return options
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=os.getenv('appport', 81), debug=True)
+    is_prod = os.environ.get('IS_HEROKU', None)
+    if is_prod:
+        app.run()
+    else:
+        app.run(host='0.0.0.0', port=81, debug=True)
