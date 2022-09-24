@@ -1,4 +1,3 @@
-from ssl import ALERT_DESCRIPTION_BAD_CERTIFICATE_HASH_VALUE
 from selenium import webdriver
 import pyautogui
 from selenium.webdriver.chrome.service import Service
@@ -28,15 +27,28 @@ def searchAmazon(x):
     pyautogui.press('enter')
     time.sleep(1)
 
+    findItem = True
+    count = 0
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     results = soup.find_all('div', {'data-component-type': 's-search-result'})
-    item = results[0]
+    while(findItem):
+        item = results[count]
+        if(item.find('span', 'a-price')):
+            findItem=False
+            print(count)
+        else:
+            count += 1
+
+    time.sleep(5)
     atag = item.h2.a
     url = "https://amazon.com" + atag.get('href')
     print(url)
     parent_price = item.find('span', 'a-price')
+    print(parent_price)
+    time.sleep(1)
     price = parent_price.find('span', 'a-offscreen').text
     print(price)
+
     rating = item.i.text
     print(rating)
     review_count = item.find('span', {'class':'a-size-base s-underline-text'}).text
@@ -44,4 +56,4 @@ def searchAmazon(x):
     arrival_date = item.find('span', {'class':'a-color-base a-text-bold'}).text
     print(arrival_date)
 
-    return url, price, rating, review_count, arrival_date
+searchAmazon("Calculator")
