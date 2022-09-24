@@ -1,16 +1,16 @@
 from selenium import webdriver
-import pyautogui
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
+#import pyautogui
 import os
 import time
 
 def searchAmazon(x):
     options = webdriver.ChromeOptions()
-    s = Service('C:\\WebDrivers\\chromedriver.exe')
+    s = Service('/home/patrick/WebDriver/chromedriver')
     driver = webdriver.Chrome(service = s, options=options)
     driver.get("https://www.amazon.com/")
     driver.maximize_window()
@@ -20,12 +20,12 @@ def searchAmazon(x):
     fitler=driver.find_element(By.CLASS_NAME, "a-dropdown-container")
     print("Working")
     fitlerClick=ActionChains(driver).move_to_element(fitler).click(fitler).perform()
-    time.sleep(1)
-    pyautogui.press('down')
-    pyautogui.press('down')
-    pyautogui.press('down')
-    pyautogui.press('enter')
-    time.sleep(1)
+    # time.sleep(1)
+    #pyautogui.press('down')
+    #pyautogui.press('down')
+    #pyautogui.press('down')
+    #pyautogui.press('enter')
+    #time.sleep(1)
 
     findItem = True
     count = 0
