@@ -1,9 +1,6 @@
 from multiprocessing import connection
 import os
-from textwrap import wrap
-from unittest import result
 import psycopg2
-from functools import wraps
 
 
 connection = psycopg2.connect(dsn=os.environ["DATABASE_URL"])
